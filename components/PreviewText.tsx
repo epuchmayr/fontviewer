@@ -11,7 +11,7 @@ export default function PreviewText({
     <label>
       Preview text:&nbsp;
       <input
-        className="border-slate-400 border rounded-sm w-80"
+        className="border-slate-400 border rounded-sm w-80 text-slate-800"
         name="fontContent"
         value={inputContent}
         onChange={changeHandler}

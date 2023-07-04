@@ -4,7 +4,7 @@ import { ttfFontList } from "../constants/FontLists";
 export default function FontSelector({
   text,
   selectHandler,
-  selectedFont
+  selectedFont,
 }: {
   text: string;
   selectHandler: Function;
@@ -17,8 +17,9 @@ export default function FontSelector({
         return (
           <li
             key={key + item}
-            style={{backgroundColor: (item === selectedFont) ? 'rgb(187 247 208)' : undefined}}
-            className="min-w-[20rem] border-t border-slate-300 leading-10 px-2 pb-4 hover:bg-green-100 hover:cursor-pointer"
+            className={`${
+              item === selectedFont && "bg-gray-200"
+            } min-w-[20rem] border-t border-slate-300 leading-10 px-2 pb-4 hover:bg-gray-100 hover:cursor-pointer hover:shadow`}
             onClick={() => selectHandler(item)}
           >
             {item}
@@ -39,7 +40,7 @@ export default function FontSelector({
 
   return (
     <>
-        <ol>{generateFontList(ttfFontList)}</ol>
+      <ol>{generateFontList(ttfFontList)}</ol>
     </>
   );
 }

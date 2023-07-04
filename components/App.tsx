@@ -11,7 +11,7 @@ import PreviewText from "./PreviewText";
 export default function App() {
   const [currentView, setCurrentView] = useState(VIEWS.SELECT);
   const [textOptions, setTextOptions] = useState({
-    fontContent: "The days are lovely and full of zeal",
+    fontContent: "Celebrate the good times",
     fontSize: "3",
     fontWeight: "400",
   });
@@ -42,10 +42,10 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-screen max-w-screen-lg mx-auto">
-      <header className="flex-none flex justify-between items-center py-2 px-3">
+      <header className="flex-none flex justify-between items-center py-2 px-3 dark:bg-slate-900">
         <div className="flex items-center">
           <Image src="/bnb-logo.jpg" alt="Box Not Box" width={36} height={36} />
-          <h2 className="text-sm font-bold text-gray-900 ml-3 leading-tight">
+          <h2 className="text-sm font-bold text-gray-950 ml-3 leading-tight dark:text-slate-200">
             Box Not Box
             <br />
             <span className="font-normal text-sm">Font Selector</span>
@@ -55,14 +55,14 @@ export default function App() {
 
       <section className="bg-white shadow shadow-slate-400 flex flex-col w-full h-full">
         <header className="">
-          <div className="text-center bg-blue-400 p-2">
+          <div className="text-center bg-blue-400 p-2 dark:bg-cyan-800 dark:text-slate-200">
             Selected Font: <strong>{selectedFont}</strong>
           </div>
         </header>
 
         {currentView === VIEWS.SELECT && (
           <>
-            <div className="text-center bg-slate-200 p-2">
+            <div className="p-2 text-center bg-slate-200 dark:bg-slate-800 dark:text-slate-200">
               <PreviewText
                 inputContent={textOptions.fontContent}
                 changeHandler={handleFontChange}
