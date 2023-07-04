@@ -8,13 +8,13 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -24,4 +24,34 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+@font-face {
+  font-family: "Buttercup";
+  src: url("/fonts/Buttercup.ttf");
+}
+@font-face {
+  font-family: "Butterfly";
+  src: url("/fonts/Butterfly.ttf");
+}
+
+@font-face {
+  font-family: "Elegante";
+  src: url("/fonts/Elegante.ttf");
+}
+@font-face {
+  font-family: "Gathering Script";
+  src: url("/fonts/Gathering Script.otf");
+}
+@font-face {
+  font-family: "Love Hewits";
+  src: url("/fonts/Love Hewits.ttf");
+}
+@font-face {
+  font-family: "Madelina Bold";
+  src: url("/fonts/Madelina Bold.ttf");
+}
+@font-face {
+  font-family: "Madelina Clean";
+  src: url("/fonts/Madina Clean.otf");
 }
