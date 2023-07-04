@@ -5,7 +5,7 @@ import { VIEWS } from "../constants/appValues";
 import { ttfFontList } from "../constants/FontLists";
 
 import FontSelector from "./FontSelector";
-import Navigation from "./Navigation";
+// import Navigation from "./Navigation";
 import PreviewText from "./PreviewText";
 
 export default function App() {
@@ -17,9 +17,9 @@ export default function App() {
   });
   const [selectedFont, setSelectedFont] = useState(ttfFontList[0]);
 
-  function navHandler(target: string) {
-    setCurrentView(target);
-  }
+  // function navHandler(target: string) {
+  //   setCurrentView(target);
+  // }
 
   function selectFontHandler(target: string) {
     setSelectedFont(target);
@@ -134,7 +134,7 @@ export default function App() {
         )}
       </section>
 
-      <Navigation currentView={currentView} handleNavigation={navHandler} />
+      {/* <Navigation currentView={currentView} handleNavigation={navHandler} /> */}
     </div>
   );
 }
