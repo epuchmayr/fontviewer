@@ -62,8 +62,9 @@ export default function App() {
 
   return (
     <div
-      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-      className="flex flex-col h-screen max-w-screen-lg mx-auto"
+      // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      style={{ position: "absolute", top: '0', right: '0', bottom: '0', left: '0' }}
+      className="flex flex-col max-w-screen-lg mx-auto"
     >
       <header className="flex-none flex justify-between items-center py-2 px-3 dark:bg-slate-900">
         <div className="flex items-center">
@@ -94,7 +95,7 @@ export default function App() {
                 Selected font may be modified to fit design requirements
               </p>
             </div>
-            <div className="flex justify-around flex-auto h-px overflow-auto box-border pb-16">
+            <div className="flex justify-around flex-auto h-px overflow-auto box-border">
               <FontSelector
                 text={textOptions.fontContent}
                 selectHandler={selectFontHandler}
