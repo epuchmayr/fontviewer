@@ -1,6 +1,11 @@
 "use client";
 import Image from "next/image";
-import React, { EventHandler, FormEventHandler, useEffect, useState } from "react";
+import React, {
+  EventHandler,
+  FormEventHandler,
+  useEffect,
+  useState,
+} from "react";
 import { VIEWS } from "../constants/appValues";
 import { ttfFontList } from "../constants/FontLists";
 
@@ -9,22 +14,20 @@ import FontSelector from "./FontSelector";
 import PreviewText from "./PreviewText";
 
 export default function App() {
-
   // hook to update '--vh' value when window is resized or browser chrome changes
   useEffect(() => {
     let setViewHeight = () => {
       // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
       let vh = window.innerHeight * 0.01;
       // Then we set the value in the --vh custom property to the root of the document
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-
-    window.addEventListener('resize', setViewHeight)
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    window.addEventListener("resize", setViewHeight);
 
     return () => {
-      window.removeEventListener('resize', setViewHeight)
-    }
-  },[])
+      window.removeEventListener("resize", setViewHeight);
+    };
+  }, []);
 
   const [currentView, setCurrentView] = useState(VIEWS.SELECT);
   const [textOptions, setTextOptions] = useState({
@@ -59,8 +62,9 @@ export default function App() {
 
   return (
     <div
-    style={{height: 'calc(var(--vh, 1vh) * 100)'}}
-      className="flex flex-col h-screen max-w-screen-lg mx-auto">
+      style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+      className="flex flex-col h-screen max-w-screen-lg mx-auto"
+    >
       <header className="flex-none flex justify-between items-center py-2 px-3 dark:bg-slate-900">
         <div className="flex items-center">
           <Image src="/bnb-logo.jpg" alt="Box Not Box" width={36} height={36} />
@@ -90,7 +94,7 @@ export default function App() {
                 Selected font may be modified to fit design requirements
               </p>
             </div>
-            <div className="flex justify-around flex-auto h-px overflow-auto py-5">
+            <div className="flex justify-around flex-auto h-px overflow-auto box-border pb-16">
               <FontSelector
                 text={textOptions.fontContent}
                 selectHandler={selectFontHandler}
