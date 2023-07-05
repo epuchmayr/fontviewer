@@ -1,11 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, {
-  EventHandler,
-  FormEventHandler,
-  useEffect,
-  useState,
-} from "react";
+import React, { useState } from "react";
 import { VIEWS } from "../constants/appValues";
 import { ttfFontList } from "../constants/FontLists";
 
@@ -14,21 +9,6 @@ import FontSelector from "./FontSelector";
 import PreviewText from "./PreviewText";
 
 export default function App() {
-  // hook to update '--vh' value when window is resized or browser chrome changes
-  useEffect(() => {
-    let setViewHeight = () => {
-      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-      let vh = window.innerHeight * 0.01;
-      // Then we set the value in the --vh custom property to the root of the document
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
-    window.addEventListener("resize", setViewHeight);
-
-    return () => {
-      window.removeEventListener("resize", setViewHeight);
-    };
-  }, []);
-
   const [currentView, setCurrentView] = useState(VIEWS.SELECT);
   const [textOptions, setTextOptions] = useState({
     fontContent: "Celebrate the good times",
@@ -61,11 +41,7 @@ export default function App() {
   }
 
   return (
-    <div
-      // style={{ height: "calc(var(--vh, 1vh) * 100)" }}
-      style={{ position: "absolute", top: '0', right: '0', bottom: '0', left: '0' }}
-      className="flex flex-col max-w-screen-lg mx-auto"
-    >
+    <div className="flex flex-col max-w-screen-lg mx-auto absolute top-0 right-0 bottom-0 left-0">
       <header className="flex-none flex justify-between items-center py-2 px-3 dark:bg-slate-900">
         <div className="flex items-center">
           <Image src="/bnb-logo.jpg" alt="Box Not Box" width={36} height={36} />
