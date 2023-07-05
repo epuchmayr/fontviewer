@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { EventHandler, FormEventHandler, useState } from "react";
+import React, { EventHandler, FormEventHandler, useEffect, useState } from "react";
 import { VIEWS } from "../constants/appValues";
 import { ttfFontList } from "../constants/FontLists";
 
@@ -9,6 +9,14 @@ import FontSelector from "./FontSelector";
 import PreviewText from "./PreviewText";
 
 export default function App() {
+
+  useEffect(() => {
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  },[])
+
   const [currentView, setCurrentView] = useState(VIEWS.SELECT);
   const [textOptions, setTextOptions] = useState({
     fontContent: "Celebrate the good times",
@@ -41,7 +49,9 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex-col h-screen max-w-screen-lg mx-auto">
+    <div
+    style={{height: 'calc(var(--vh, 1vh) * 100)'}}
+      className="flex flex-col h-screen max-w-screen-lg mx-auto">
       <header className="flex-none flex justify-between items-center py-2 px-3 dark:bg-slate-900">
         <div className="flex items-center">
           <Image src="/bnb-logo.jpg" alt="Box Not Box" width={36} height={36} />
@@ -55,7 +65,7 @@ export default function App() {
 
       <section className="bg-white shadow shadow-slate-400 flex flex-col w-full h-full">
         <header className="">
-          <div className="text-center bg-blue-400 p-2 dark:bg-cyan-800 dark:text-slate-200">
+          <div className="text-center p-2 bg-cyan-800 dark:text-slate-200">
             Selected Font: <strong>{selectedFont}</strong>
           </div>
         </header>
