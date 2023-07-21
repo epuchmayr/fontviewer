@@ -40,7 +40,7 @@ export default function FontSelector({
 
   return (
     <>
-      <ol>{generateFontList(ttfFontList)}</ol>
+      <ol>{generateFontList(ttfFontList.sort())}</ol>
     </>
   );
 }

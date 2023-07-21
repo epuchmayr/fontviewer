@@ -15,7 +15,7 @@ export default function App() {
     fontSize: "3",
     fontWeight: "400",
   });
-  const [selectedFont, setSelectedFont] = useState(ttfFontList[0]);
+  const [selectedFont, setSelectedFont] = useState(ttfFontList.sort()[0]);
 
   // function navHandler(target: string) {
   //   setCurrentView(target);

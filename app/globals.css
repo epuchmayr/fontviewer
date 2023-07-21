@@ -34,7 +34,6 @@ body {
   font-family: "Butterfly";
   src: url("/fonts/Butterfly.ttf");
 }
-
 @font-face {
   font-family: "Elegante";
   src: url("/fonts/Elegante.ttf");
@@ -52,6 +51,42 @@ body {
   src: url("/fonts/Madelina Bold.ttf");
 }
 @font-face {
-  font-family: "Madelina Clean";
+  font-family: "Madina Clean";
   src: url("/fonts/Madina Clean.otf");
+}
+@font-face {
+  font-family: "Angista Script";
+  src: url('/fonts/Angista Script.otf');
+}
+@font-face {
+  font-family: "Baby Script";
+  src: url('/fonts/Baby Script.ttf');
+}
+@font-face {
+  font-family: "Georgina";
+  src: url('/fonts/Georgina.ttf');
+}
+@font-face {
+  font-family: "Hello Honey";
+  src: url('/fonts/Hello Honey.otf');
+}
+@font-face {
+  font-family: "Hugs and Kisses";
+  src: url('/fonts/Hugs and Kisses xoxo.ttf');
+}
+@font-face {
+  font-family: "Josephsophia";
+  src: url('/fonts/Josephsophia.otf');
+}
+@font-face {
+  font-family: "Madina Clean Alt";
+  src: url('/fonts/Madina Clean Alt.otf');
+}
+@font-face {
+  font-family: "Magnolia Sky";
+  src: url('/fonts/Magnolia Sky.otf');
+}
+@font-face {
+  font-family: "Valentina";
+  src: url('/fonts/Valentina.ttf');
 }
